@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Waters | Home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Rain Animation -->
+    <div class="rain"></div>
+
+    <!-- Rising Water Animation -->
+    <div class="water">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,40 C150,120 350,0 600,40 C850,80 1050,0 1200,40 L1200,120 L0,120 Z"></path>
+    </svg>
+</div>
+
+    <!-- Main Content -->
+    <div class="overlay">
+
+        <div class="home-container">
+
+            <h1>🌊 Rising Waters</h1>
+
+            <h2>A Machine Learning Approach to Flood Prediction</h2>
+
+            <p class="subtitle">
+                Floods are among the most devastating natural disasters worldwide.
+                Our intelligent flood prediction system analyzes rainfall patterns
+                using Machine Learning to provide early flood risk warnings,
+                helping authorities and communities take timely preventive action.
+            </p>
+
+            <div class="features">
+
+                <div class="feature-card">
+                    <h3>⚡ Early Warning</h3>
+                    <p>Predict flood risk before disasters occur.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🤖 Machine Learning</h3>
+                    <p>Powered by the XGBoost classification algorithm.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🛡 Disaster Management</h3>
+                    <p>Supports faster emergency planning and response.</p>
+                </div>
+
+            </div>
+
+            <div class="info">
+
+                <div class="card">
+                    <h3>96.55%</h3>
+                    <span>Accuracy</span>
+                </div>
+
+                <div class="card">
+                    <h3>XGBoost</h3>
+                    <span>Best Model</span>
+                </div>
+
+                <div class="card">
+                    <h3>Flask</h3>
+                    <span>Deployment</span>
+                </div>
+
+            </div>
+
+            <br><br>
+
+            <a href="{{ url_for('predict_page') }}" class="start-btn">
+                🚀 Get Started
+            </a>
+
+            <footer>
+
+                <hr>
+
+                <p><b>Developed by Team Rising Waters</b></p>
+
+                <p>IBM SkillsBuild Internship Project 2026</p>
+
+                <p>Machine Learning | Flask | Python | XGBoost</p>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <!-- Rain Animation Script -->
+    <script src="{{ url_for('static', filename='rain.js') }}"></script>
+
+</body>
+
+</html>

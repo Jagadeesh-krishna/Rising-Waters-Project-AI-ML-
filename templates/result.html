@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Prediction Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+{% if prediction==1 %}
+
+<h1 style="color:#ff5252;">⚠ Flood Risk Detected</h1>
+
+<p class="result">
+
+High probability of flooding.
+
+Immediate precautionary measures are recommended.
+
+</p>
+
+{% else %}
+
+<h1 style="color:#2ecc71;">✅ No Flood Risk</h1>
+
+<p class="result">
+
+Current weather conditions indicate a low probability of flooding.
+
+</p>
+
+{% endif %}
+
+<a href="/">
+
+<button>
+
+Predict Again
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

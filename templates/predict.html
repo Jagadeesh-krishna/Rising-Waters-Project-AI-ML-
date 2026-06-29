@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Prediction | Rising Waters</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="container">
+
+        <h1>🌊 Rising Waters</h1>
+
+        <h2>Flood Risk Prediction</h2>
+
+        <p class="subtitle">
+            Enter rainfall details below to predict the probability of flooding
+            using our Machine Learning model.
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <input type="number"
+                   step="any"
+                   name="annual"
+                   placeholder="🌧 Annual Rainfall (mm)"
+                   required>
+
+            <input type="number"
+                   step="any"
+                   name="janfeb"
+                   placeholder="🌦 Jan-Feb Rainfall (mm)"
+                   required>
+
+            <input type="number"
+                   step="any"
+                   name="marmay"
+                   placeholder="🌱 Mar-May Rainfall (mm)"
+                   required>
+
+            <input type="number"
+                   step="any"
+                   name="junsep"
+                   placeholder="☔ Jun-Sep Rainfall (mm)"
+                   required>
+
+            <input type="number"
+                   step="any"
+                   name="octdec"
+                   placeholder="🌨 Oct-Dec Rainfall (mm)"
+                   required>
+
+            <button type="submit">
+                🔍 Predict Flood Risk
+            </button>
+
+        </form>
+
+        <div class="features">
+
+            <div class="feature-card">
+                🚨
+                <h4>Early Warning</h4>
+                <p>Predict flood risk before disaster strikes.</p>
+            </div>
+
+            <div class="feature-card">
+                🤖
+                <h4>AI Powered</h4>
+                <p>Powered by the XGBoost Machine Learning model.</p>
+            </div>
+
+            <div class="feature-card">
+                🌍
+                <h4>Disaster Ready</h4>
+                <p>Supports emergency planning and response.</p>
+            </div>
+
+        </div>
+
+        <div class="info">
+
+            <div class="card">
+                <h3>96.55%</h3>
+                <span>Accuracy</span>
+            </div>
+
+            <div class="card">
+                <h3>XGBoost</h3>
+                <span>Best Model</span>
+            </div>
+
+            <div class="card">
+                <h3>Flask</h3>
+                <span>Deployment</span>
+            </div>
+
+        </div>
+
+        <br>
+
+        <a href="{{ url_for('home') }}">
+            <button class="back-btn">
+                ⬅ Back to Home
+            </button>
+        </a>
+
+        <footer>
+
+            <hr>
+
+            <p><b>Developed by Team Rising Waters</b></p>
+
+            <p>IBM SkillsBuild Internship Project 2026</p>
+
+            <p>Machine Learning | Flask | Python | XGBoost</p>
+
+        </footer>
+
+    </div>
+
+</div>
+
+</body>
+</html>

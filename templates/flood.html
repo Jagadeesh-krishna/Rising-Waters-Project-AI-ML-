@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Alert | Rising Waters</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Rain Animation -->
+    <div class="rain"></div>
+
+    <!-- Moving Water -->
+    <div class="water">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,40 C150,120 350,0 600,40 C850,80 1050,0 1200,40 L1200,120 L0,120 Z"></path>
+        </svg>
+    </div>
+
+    <div class="overlay">
+
+        <div class="container">
+
+            <!-- Warning Banner -->
+            <div class="alert danger">
+                <h1>⚠️ HIGH FLOOD RISK DETECTED</h1>
+            </div>
+
+            <!-- Result -->
+            <p class="result">
+                Our <b>Machine Learning model</b> predicts a
+                <b>high probability of flooding</b> based on the rainfall
+                conditions entered.
+            </p>
+
+            <!-- Flood Risk Meter -->
+            <div class="risk-section">
+
+                <h2>Flood Risk Level</h2>
+
+                <div class="progress-bar danger-bar"
+     style="width: {{ risk }}%;">
+    {{ risk }}%
+</div>
+
+                </div>
+
+                <p class="risk-text">
+                    Immediate precautionary measures are strongly recommended.
+                </p>
+
+            </div>
+
+            <hr>
+
+            <!-- Safety Tips -->
+
+            <div class="tips">
+
+                <h2>🛡 Safety Tips</h2>
+
+                <ul>
+
+                    <li>🚨 Follow official weather warnings.</li>
+
+                    <li>🏠 Move to higher ground immediately.</li>
+
+                    <li>🔌 Turn off electricity before evacuating.</li>
+
+                    <li>🎒 Keep an emergency kit ready.</li>
+
+                    <li>📱 Stay connected with emergency services.</li>
+
+                    <li>🚗 Avoid driving through flooded roads.</li>
+
+                </ul>
+
+            </div>
+
+            <br>
+
+            <a href="{{ url_for('predict_page') }}" class="start-btn">
+
+                🔄 Predict Again
+
+            </a>
+
+            <br><br>
+
+            <a href="{{ url_for('home') }}" class="start-btn">
+
+                🏠 Back to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='rain.js') }}"></script>
+
+</body>
+
+</html>

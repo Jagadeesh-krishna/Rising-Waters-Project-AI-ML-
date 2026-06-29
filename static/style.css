@@ -1,0 +1,580 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+
+    background: url("/static/background.png") no-repeat center center fixed;
+    background-size: cover;
+
+    overflow-x: hidden;
+}
+
+/* DARK OVERLAY (IMPORTANT FOR READABILITY) */
+.overlay {
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN FORM CONTAINER */
+.container {
+    width: 520px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* HEADINGS */
+h1 {
+    font-size: 46px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* TEXT */
+.subtitle {
+    margin-bottom: 30px;
+    color: #f5f5f5;
+}
+
+/* INPUT FIELDS */
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+
+    background: #00a8ff;
+    border: none;
+    color: white;
+
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #007acc;
+}
+
+/* INFO SECTION */
+.info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.info h3 {
+    font-size: 24px;
+    color: #00e5ff;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 35px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* RESULT TEXT */
+.result {
+    font-size: 22px;
+    margin: 25px 0;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+    margin-bottom: 20px;
+}
+
+/* TAGLINE */
+.tagline {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00d9ff;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* FEATURES SECTION */
+.features {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 12px;
+    border-radius: 12px;
+    width: 32%;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.feature-card h4 {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.feature-card p {
+    font-size: 13px;
+    color: #eee;
+}
+
+/* SMALL CARD */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 10px;
+    border-radius: 12px;
+    width: 30%;
+}
+
+.card span {
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* LINE */
+hr {
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background: #777;
+}
+
+/* HOME PAGE */
+.home-container {
+    width: 900px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* START BUTTON */
+.start-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+
+    background: #00a8ff;
+    color: white;
+
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background: #007acc;
+    transform: translateY(-3px);
+}
+
+/* PARAGRAPH */
+.home-container p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    .home-container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature-card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+/* ==========================
+   RAIN ANIMATION
+========================== */
+
+.rain{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.drop{
+
+    position:absolute;
+
+    top:-100px;
+
+    width:2px;
+
+    height:80px;
+
+    background:linear-gradient(transparent, rgba(255,255,255,.8));
+
+    animation:rain linear infinite;
+}
+
+@keyframes rain{
+
+0%{
+    transform:translateY(-100px);
+}
+
+100%{
+    transform:translateY(120vh);
+}
+
+}
+
+/* Keep content above rain */
+
+.overlay{
+
+    position:relative;
+
+    z-index:2;
+
+}
+/* ==========================
+   RISING WATER ANIMATION
+========================== */
+
+.water{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:120px;
+
+    background:linear-gradient(
+        rgba(0,170,255,.7),
+        rgba(0,100,255,.9)
+    );
+
+    border-radius:100% 100% 0 0;
+
+    animation:wave 5s ease-in-out infinite;
+
+    z-index:1;
+}
+
+.water::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-20px;
+    left:0;
+
+    width:200%;
+
+    height:40px;
+
+    background:
+    radial-gradient(circle at 20px 20px,
+    rgba(255,255,255,.4) 18px,
+    transparent 19px);
+
+    background-size:60px 40px;
+
+    animation:moveWave 6s linear infinite;
+}
+
+@keyframes moveWave{
+
+0%{
+    transform:translateX(0);
+}
+
+100%{
+    transform:translateX(-60px);
+}
+
+}
+
+@keyframes wave{
+
+0%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-10px);
+}
+
+100%{
+    transform:translateY(0);
+}
+
+}
+/*==========================
+ ALERT BOXES
+===========================*/
+
+.alert{
+
+padding:20px;
+
+border-radius:15px;
+
+margin-bottom:25px;
+
+color:white;
+
+font-weight:bold;
+
+animation:pop .8s;
+}
+
+.danger{
+
+background:#d63031;
+
+box-shadow:0 0 25px rgba(255,0,0,.6);
+}
+
+.safe{
+
+background:#27ae60;
+
+box-shadow:0 0 25px rgba(0,255,120,.5);
+}
+
+@keyframes pop{
+
+0%{
+
+transform:scale(.7);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.tips{
+
+text-align:left;
+
+margin-top:25px;
+
+}
+
+.tips h2{
+
+margin-bottom:10px;
+
+color:#00e5ff;
+
+}
+
+.tips ul{
+
+padding-left:20px;
+
+line-height:2;
+
+}
+/*==========================
+ ALERT BOX
+===========================*/
+
+.alert{
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+    color:white;
+    animation:pop .8s ease;
+}
+
+.danger{
+    background:#d63031;
+    box-shadow:0 0 25px rgba(255,0,0,.6);
+}
+
+.safe{
+    background:#27ae60;
+    box-shadow:0 0 25px rgba(0,255,100,.5);
+}
+
+@keyframes pop{
+
+0%{
+transform:scale(.7);
+opacity:0;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/*==========================
+ FLOOD RISK BAR
+===========================*/
+
+.risk-section{
+    margin:30px 0;
+}
+
+.progress{
+
+    width:100%;
+    height:32px;
+    background:rgba(255,255,255,.2);
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-bar{
+
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-weight:bold;
+    font-size:18px;
+
+    animation:grow 2s ease;
+}
+
+.danger-bar{
+    background:linear-gradient(90deg,#ff4b4b,#ff0000);
+}
+
+.safe-bar{
+    background:linear-gradient(90deg,#00d26a,#00a651);
+}
+
+@keyframes grow{
+
+from{
+width:0;
+}
+
+}
+
+.risk-text{
+
+margin-top:10px;
+font-size:17px;
+color:#f0f0f0;
+
+}
+
+/*==========================
+ SAFETY TIPS
+===========================*/
+
+.tips{
+
+text-align:left;
+margin-top:25px;
+
+}
+
+.tips h2{
+
+color:#00e5ff;
+margin-bottom:10px;
+
+}
+
+.tips ul{
+
+padding-left:20px;
+line-height:2;
+
+}
+
+.tips li{
+
+margin-bottom:8px;
+
+}
